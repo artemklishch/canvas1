@@ -172,3 +172,31 @@ let val = str.replace(/\s+/g,' ').trim();
 //val = str.trimRight();
 return val;
 }
+
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas .getContext("2d");
+ctx.beginPath();
+ctx.moveTo(40, 30);
+ctx.quadraticCurveTo(20, 100, 200, 20);
+// ctx.quadraticCurveTo(200, 100, 100, 10);
+ctx.stroke();
+
+// Quadratic Bézier curve
+ctx.beginPath();
+ctx.moveTo(50, 20);
+ctx.quadraticCurveTo(230, 30, 50, 100);
+ctx.stroke();
+
+// Start and end points
+ctx.fillStyle = 'blue';
+ctx.beginPath();
+ctx.arc(50, 20, 5, 0, 2 * Math.PI);   // Start point
+ctx.arc(50, 100, 5, 0, 2 * Math.PI);  // End point
+ctx.fill();
+
+// Control point
+ctx.fillStyle = 'red';
+ctx.beginPath();
+ctx.arc(230, 30, 5, 0, 2 * Math.PI);
+ctx.fill();
